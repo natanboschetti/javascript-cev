@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu primeiro programa</title>
-    <script src="script.js"></script>
     <style>
         body {
             background-color: rgb(105, 105, 173);
@@ -20,5 +19,11 @@
 </head>
 <body>
     <h1>Olá, mundo!</h1>
+    <script>
+        let number1 = Number(window.prompt(`Digite um número:`))
+        let number2 = Number(window.prompt(`Digite outro número:`))
+        const sum = number1 + number2
+        window.alert(`A soma entre ${number1} e ${number2} é ${sum}`)
+    </script>
 </body>
 </html>
