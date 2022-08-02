@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+    <style>
+        body {
+            font: 20px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h2> Sua nacionalidade </h2>
+    Qual o seu país ? <input type="text" name="country" id="country" autofocus tabindex="1">
+    <input type="button" value="Pesquisar" onclick="clicar()" tabindex="2">
+    <div id="result">
+    </div>
+    <script>
+        function clicar(){
+            let country2 = document.getElementById('country')
+            let countryresult = document.getElementById('result')
+
+            let res2 = String((country2).value).toUpperCase() 
+            result.innerHTML = `<p>Seu país é ${res2}</p>`
+
+            if (res2 == `BRASIL`) {
+                result.innerHTML += `<p>Você é Brasileiro!</p>`
+            } else {
+                result.innerHTML += `<p>Você é um estrangeiro!</p>`
+            }
+        }
+    </script>   
+</body>
+</html>

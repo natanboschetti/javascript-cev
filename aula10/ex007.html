@@ -5,13 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        div#calculator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        input.input {
+            border-radius: 10px;
+            text-align: center;
+
+        }
+    </style>
 </head>
 <body>
     <h1>Somando valores</h1>
-    <input type="number" name="number1" id="number1"> +
-    <input type="number" name="number2" id="number2">
-    <input type="button" value="Sum" onclick="sum()">
-    <div id="result">Result</div>
+    <div id="calculator">
+        <input type="number" name="number1" id="number1" class="input"> +
+        <input type="number" name="number2" id="number2" class="input">
+        <input type="button" value="Sum" onclick="sum()" class="input">
+        <div id="result">Result</div>
+    </div>
     <script>
         function sum() {
             let number1 = Number(document.getElementById('number1').value)
