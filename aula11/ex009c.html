@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions</title>
+    <style>
+        body {
+            font: 20px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    Você nasceu em qual país? <input type="text" name="country" id="country">
+    <input type="button" value="Verify" onclick="clicar()">
+    <div id="result"></div>
+    <script>
+       function clicar() {
+            let country = document.getElementById('country')
+            let result = document.getElementById('result')
+
+            let country0 = String(country.value).toUpperCase()
+            result.innerHTML = `<p>Você mora em ${country0}</p>`
+
+            if (country0 == `BRASIL`) {
+                result.innerText += `<p>Você é Brasileiro</p>`
+            } else {
+                result.innerText += `<p>Você é Estrangeiro</p>`
+            }
+       }
+    </script>
+</body>
+</html>
