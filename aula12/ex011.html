@@ -29,7 +29,7 @@
 </head>
 <body onload="relogio()" >
     <h1 id="saudar">...</h1>
-    <label id="relogio" onclick="diaSemana()"></label>
+    <label id="relogio" onclick="clicar()"></label>
    <script>
            var saudar = document.getElementById('saudar')
            var data = new Date()
@@ -43,7 +43,7 @@
                saudar.innerHTML = 'Boa noite!'
            }
        
-       function diaSemana(){
+       function clicar(){
            var relogio = document.getElementById('relogio') 
            var data = new Date()
            var diaSemana = data.getDay()

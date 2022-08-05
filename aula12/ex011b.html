@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.888);
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        div#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h1#period {
+            margin: 10px;
+        }
+
+        label#watch {
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        label#watch:hover {
+            transition: .5s;
+            background-color: white;
+            color: #000000e2;
+        }
+    </style>
+</head>
+
+<body onload="watch()">
+    <div id="container">
+        <h1 id="period"></h1>
+        <label id="watch" onclick="clicar()"></label>
+    </div>
+    <script>
+        let period = document.getElementById(`period`)
+        let date = new Date()
+        let hour = date.getHours()
+
+        if (hour >= 6 && hour <= 12) {
+            period.innerHTML = `Bom Dia!`
+        } else if (hour > 12 && hour <= 18) {
+            period.innerHTML = `Boa tarde!`
+        } else if (hour > 18 && hour < 00) {
+            period.innerHTML = `Boa noite!`
+        } else if (hour >= 00 && hour < 6) {
+            period.innerHTML = `Boa madrugada!`
+        }
+
+        function clicar() {
+            let watch = document.getElementById(`watch`)
+            let dayWeek = date.getDay()
+
+            switch (dayWeek) {
+                case 0:
+                    watch.innerHTML = 'Domingo'
+                    break
+                case 1:
+                    watch.innerHTML = 'Segunda-Feira'
+                    break
+                case 2:
+                    watch.innerHTML = 'Terça-Feira'
+                    break
+                case 3:
+                    watch.innerHTML = 'Quarta-Feira'
+                    break
+                case 4:
+                    watch.innerHTML = 'Quinta-Feira'
+                    break
+                case 5:
+                    watch.innerHTML = 'Sexta-Feira'
+                    break
+                case 6:
+                    watch.innerHTML = 'Sábado'
+                    break
+            }
+        }
+
+        function watch(){
+           let date = new Date()
+           let hour = date.getHours()
+           let min = date.getMinutes()
+           let sec = date.getSeconds()
+
+           if(hour < 10){
+               hour = '0'+ hour
+           } else if(min < 10){
+               min = '0'+ min
+           } else if(sec < 10){
+               sec = '0'+ sec
+           }
+           document.querySelector('#watch').innerHTML = hour + ':' + min + ':' + sec
+        }
+        window.setInterval('watch()', 1000)
+        
+        
+    </script>
+</body>
+
+</html>
