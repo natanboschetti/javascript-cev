@@ -15,15 +15,15 @@ function count() {
             alert(`Passo inválido! Considerando PASSO 1`)
             p = 1
         }
-
-        if (startNumber < endNumber) { //contagem crescente
+        
+        if (startNumber < endNumber) { // contagem crescente
             for (let c = startNumber; c <= endNumber; c += stepNumber) {
-                result.innerHTML += `${c} `
+                result.innerHTML += `${c} `        
             }
-        } else { //contagem regressiva
+        } else { // contagem regressiva
             for (let c = startNumber; c >= endNumber; c -= stepNumber) {
-                result.innerHTML += `${c} `
+                result.innerHTML += `${c} ` 
             }
         }
     }
-}   
+}
