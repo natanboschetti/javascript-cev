@@ -4,7 +4,7 @@ function generate() {
     if (number.length == 0) {
         alert(`Erro! Verifique os dados e tente novamente`)
     } else {
-        tableSelection
+        tableSelection.innerHTML = ''
         for (let c = 1; c < 11; c++) {
             let item = document.createElement(`option`)
             item.text = `${number} x ${c} = ${number * c}`
